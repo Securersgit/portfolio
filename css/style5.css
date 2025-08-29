@@ -1,0 +1,89 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk";
+}
+
+header {
+    display: flex;
+    height: 50px;
+    background-color: rgb(29, 29, 29);
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+header .logo {
+    font-size: 12px;
+}
+header .links ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+/* HERO  */
+.hero {
+    padding: 1rem 0 2rem;
+    background-image: url(/img/header-bg.jpg);
+}
+
+.hero .id h2.name{
+    font-family: 'MADE Outer Sans', sans-serif;
+    font-size: 12rem;
+    line-height: 11rem;
+    padding: 0;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    width: 50%;
+    padding: 0 4vw;
+}
+
+.hero button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: transparent;
+    border-radius: 100px;
+    padding: 1rem 2rem;
+    margin: 0 4vw;
+    font-family: "Space Grotesk";
+    font-size: 1.5rem;
+}
+.hero button img {
+    width: 30px;
+    height: auto;
+}
+
+.hero .socials {
+    display: flex;
+    justify-content: end;
+    width: 95%;
+    gap: .5rem;
+}
+.hero .socials img {
+    width: 30px;
+}
+
+/* ABOUT SECTION */
+.about {
+    padding: 2rem;
+    background-color: black;
+    color: gray; /* initial grayed out color */
+}
+
+.about .main-text {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 5rem;
+}
+
+.about .main-text span {
+    color: gray; /* default color for each character */
+    transition: color 0.3s ease;
+}

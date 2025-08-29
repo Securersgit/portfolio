@@ -1,0 +1,227 @@
+    @font-face {
+      font-family: 'Sifty';
+      src: url('/fonts/Sifty-Light.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Sifty Bold';
+      src: url('/fonts/Sifty-Bold.woff') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Clash Display', sans-serif;
+    font-weight: normal;
+}
+
+
+.main {
+    /* background-image: url(/img/download\ \(13\).jpg); */
+        background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(4, 0, 23, 0.763)),
+    url('/img/download\ \(13\).jpg');
+    /* background-color: black; */
+    background-size: cover;
+    color: white;
+    height: 100vh;
+}
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    font-weight: 300;
+}
+.header .links ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+.header .links ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: 'Clash Display';
+    font-weight: normal;
+}
+.header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+
+.hero {
+    text-align: center;
+    /* height: 100vh; */
+}
+.hero .top {
+    margin: 10% 0 2%;
+}
+.hero .top h2 {
+    font-size: 1rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.463);
+    font-weight: normal;
+}
+.hero .top h2 span {
+    color: white;
+    font-size: 8rem;
+    font-family: 'Sifty';
+    font-weight: 500;
+}
+.hero .top p {
+    color: rgba(255, 255, 255, 0.441);
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.hero .buttons button {
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    border-radius: 100px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+/* about  */
+.about {
+    display: flex;
+    padding: 1rem 2rem;
+    gap: 2rem;
+    background-color: black;
+    color: white;
+}
+.about img {
+    width: 30%;
+    height: 300px;
+    border-radius: 20px;
+}
+
+/* Works Section Styling */
+.works {
+    background-color: black;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+}
+
+.works h1 {
+  font-family: 'Sifty Bold', sans-serif;
+  font-weight: 600;
+  color: #ffffff; /* neutral accent */
+  /* text-align: center; */
+  font-size: 5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.work {
+  display: flex;
+  background: #1f1f1f;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(74, 90, 117, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(74, 90, 117, 0.3);
+}
+
+.work .left {
+  flex: 1;
+  min-width: 200px;
+  overflow: hidden;
+}
+
+.work .left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.work:hover .left img {
+  transform: scale(1.05);
+}
+
+.work .right {
+  flex: 2;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.work .right h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.work .right p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.stack {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.stack span {
+  background: #000000; /* muted taupe */
+  color: white;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.stack span:hover {
+  background-color: #758E67; /* muted olive accent */
+}
+
+
+
+
+
+/* Responsive */
+@media (max-width: 700px) {
+  .work {
+    flex-direction: column;
+  }
+  .work .right {
+    padding: 1.2rem 1rem;
+  }
+}
