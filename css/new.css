@@ -68,6 +68,7 @@ header .links ul {
 }
 
 .hero button {
+  color: black;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -250,6 +251,11 @@ header .links ul {
   .skills-tools ul {
     grid-template-columns: 1fr;
     gap: 1rem 1rem;
+  }
+
+    .about .main-text {
+    font-size: 2rem;
+    line-height: 3rem;
   }
 }
 
