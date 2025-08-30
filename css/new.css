@@ -68,6 +68,7 @@ header .links ul {
 }
 
 .hero button {
+  border: 1px solid;
   color: black;
     display: flex;
     align-items: center;
