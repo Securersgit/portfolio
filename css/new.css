@@ -120,7 +120,7 @@ header .links ul {
 
 
 .works {
-    padding: 2rem 4rem;
+    padding: 2rem 4rem 10rem;
     background-image: url(/img/header-bg.jpg);
 }
 .works .head {
@@ -141,6 +141,7 @@ header .links ul {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    perspective: 1000px; /* Add perspective to enable 3D tilt */
 }
 
 @media (min-width: 768px) {
@@ -150,11 +151,21 @@ header .links ul {
 }
 
 .works .project-body .project {
-    padding: 1rem;
-    background-color: rgb(244, 244, 244);
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.158);
-    border-radius: 8px;
+  padding: 1rem;
+  background-color: rgb(244, 244, 244);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.158);
+  border: 1px solid;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
 }
+
+.works .project-body .project:hover {
+  transform: scale(1.05) rotateX(10deg) rotateY(10deg);
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
 .works .project-body .project .top-image {
     height: 250px; /* Fixed height for consistent cropping */
     overflow: hidden; /* Hide any overflow from the image */
@@ -164,7 +175,7 @@ header .links ul {
 
 .works .project-body .project .top-image img {
     width: 100%;
-    height: 100%; /* Fill the container height */
+    /* height: 100%; */
     object-fit: cover; /* Crop the image to fit the container */
     display: block; /* Remove extra space below image */
 }
@@ -176,16 +187,24 @@ header .links ul {
     background-color: black;
     padding: 4rem;
     display: flex;
+    align-items: top;
     color: antiquewhite;
     gap: 2rem;
 }
 .about-me h2 {
     font-size: 3rem;
+    margin: 0;
 }
-.about-me img {
-    width: 40%;
-    height: 70%;
-    border-radius: 8px;
+.about-me .lefty {
+    flex-basis: 30%;
+    border-radius: 30px;
+}
+.about-me .lefty img {
+  width: 100%;
+  border-radius: 30px;
+}
+.about-me .righty {
+  flex-basis: 70%;
 }
 
 
@@ -369,6 +388,10 @@ footer {
   }
   .service-item p {
     font-size: 1rem;
+  }
+
+  .works .project-body .project .top-image {
+    height: auto;
   }
 }
 
@@ -555,3 +578,152 @@ section.visible, .works .project.visible, .about-me.visible, .contact.visible {
   transform: translateY(0);
   visibility: visible;
 }
+
+
+
+
+
+
+
+
+
+
+
+      .stack-area {
+        width: 100%;
+        min-height: 300vh;
+        position: relative;
+        background: white;
+        display: flex;
+        flex-wrap: nowrap;
+      }
+      .left,
+      .right {
+        height: 100vh;
+        flex-basis: 50%;
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 0 2rem;
+      }
+      .left {
+        left: 0;
+        text-align: left;
+      }
+      .title {
+        max-width: 420px;
+        font-size: 84px;
+        font-weight: 700;
+        line-height: 88px;
+        margin-bottom: 1rem;
+      }
+      .sub-title {
+        max-width: 420px;
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      .sub-title button {
+        font-size: 14px;
+        padding: 15px 30px;
+        background: black;
+        color: white;
+        border-radius: 8mm;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: 2rem;
+      }
+      .card {
+        width: 350px;
+        height: 350px;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        position: absolute;
+        top: calc(50% - 175px);
+        left: calc(50% - 175px);
+        transition: 0.5s ease-in-out;
+        box-sizing: border-box;
+        padding: 35px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        color: white;
+      }
+      .card:nth-child(1) {
+        background: rgb(64, 122, 255);
+      }
+      .card:nth-child(2) {
+        background: rgb(221, 62, 88);
+      }
+      .card:nth-child(3) {
+        background: rgb(186, 113, 245);
+      }
+      .card:nth-child(4) {
+        background: rgb(247, 92, 208);
+      }
+      .sub {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .content {
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 54px;
+      }
+      .away {
+        transform-origin: bottom left;
+      }
+
+
+            /* Responsive Styling */
+      @media (max-width: 768px) {
+        .stack-area {
+          flex-wrap: wrap;
+          min-height: auto;
+        }
+        .left,
+        .right {
+          position: relative;
+          flex-basis: 100%;
+          height: auto;
+          padding: 2rem 1rem;
+        }
+        .left {
+          order: 1;
+        }
+        .right {
+          order: 2;
+          min-height: auto;
+          padding-top: 2rem;
+          display: flex;
+          justify-content: center;
+          position: static;
+          height: auto;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+        .card {
+          position: relative;
+          width: 90vw;
+          max-width: 320px;
+          height: auto;
+          min-height: 250px;
+          margin-bottom: 1rem;
+          top: auto;
+          left: auto;
+          transition: none !important;
+          transform: none !important;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+
+
+      img.thank-you {
+        width: 100%;
+      }
