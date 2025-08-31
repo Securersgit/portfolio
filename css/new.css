@@ -105,6 +105,13 @@ header .links ul li a {
     align-items: center;
     justify-content: space-between;
 }
+.hero .bottom a {
+  text-decoration: none;
+  color: black;
+}
+.hero .bottom button {
+  cursor: pointer;
+}
 .hero .socials img {
     width: 50px;
 }
